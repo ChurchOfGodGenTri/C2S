@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C2S Manual</title>
+    <style>
+        :root {
+            --red: #ff0050;
+            --cyan: #00b7c3;
+            --yellow: #ffa000;
+            --leaf-green: #4caf50;
+            --bg: #ffffff;
+            --text: #333333;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        /* Header with 2-color boxes */
+        header {
+            display: flex;
+            height: 120px;
+            width: 100%;
+        }
+        .header-left { background: var(--red); flex:1; display:flex; justify-content:center; align-items:center; color:#fff; font-size:2rem; font-weight:bold;}
+        .header-right { background: var(--cyan); flex:1; display:flex; justify-content:center; align-items:center; color:#fff; font-size:2rem; font-weight:bold;}
+        .header-underline { height:5px; background: var(--yellow); width:100%; }
+
+        /* Chapter buttons */
+        .chapter-buttons {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        .chapter-buttons a {
+            padding: 12px 18px;
+            color: #fff;
+            font-weight: bold;
+            border-radius: 5px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .chapter-1 { background: var(--yellow); color: #000; } /* yellow with black text */
+        .chapter-2 { background: var(--red); }
+        .chapter-3 { background: var(--cyan); }
+        .chapter-4 { background: var(--leaf-green); }
+
+        .chapter-buttons a:hover { opacity: 0.8; }
+
+        /* Sections */
+        section { max-width:900px; margin:40px auto; padding:0 20px; }
+        h2 { color: var(--red); font-size:2rem; margin-bottom:20px; text-align:center; }
+        h3 { color: var(--cyan); font-size:1.5rem; margin-top:30px; }
+        p { margin-bottom:20px; font-size:1.1rem; }
+        .quote { border-left:5px solid var(--yellow); padding-left:15px; font-style:italic; margin:20px 0; color:var(--red); }
+        .bullet { color: var(--yellow); font-weight:bold; margin-left:10px; }
+        .signature { margin-top:40px; font-weight:bold; }
+
+        ul { margin-left:20px; }
+
+        /* Footer */
+        footer { background: var(--cyan); color:#fff; text-align:center; padding:20px 0; }
+        footer a { color: var(--yellow); }
+
+        @media(max-width:768px){
+            .header-left, .header-right { font-size:1.5rem; }
+            h2 { font-size:1.5rem; }
+            h3 { font-size:1.2rem; }
+            p { font-size:1rem; }
+            .chapter-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-left">C2S</div>
+        <div class="header-right">Manual</div>
+    </header>
+    <div class="header-underline"></div>
+
+    <!-- Chapter Buttons -->
+    <div class="chapter-buttons">
+        <a href="chapter1.html" class="chapter-1">Chapter 1: Born Again Experience</a>
+        <a href="chapter2.html" class="chapter-2">Chapter 2: Life of a Winner</a>
+        <a href="chapter3.html" class="chapter-3">Chapter 3: Walking in Great Faith</a>
+        <a href="chapter4.html" class="chapter-4">Chapter 4: Marks of a True Follower of Jesus</a>
+    </div>
+
+    <!-- Section 1: Pastor Message -->
+    <section id="pastor-message">
+        <h2>A Message from the Senior Pastor</h2>
+        <p class="quote">“This church’s main job is to save the lost.”</p>
+        <p>Through my years of experience in growing a church, I have tirelessly searched for materials that would disciple the congregation and eventually send them out into the harvest field. The burning desire to fire up churches and not hit a plateau was my motivation. However, good materials I found would be available today and gone tomorrow. Some resources were meaningful but didn’t fit the church’s culture. This could be frustrating and disappointing indeed.</p>
+        <p>Thus, this devotional manual was born to address this need. It is a product of our unwavering passion to save the lost and our commitment to fulfill the Great Commission—not just through addition or multiplication, but ambitiously through a structured manual designed to grow a church exponentially without overburdening our beloved volunteers.</p>
+        <p>This manual would not have become a reality without the help of countless individuals who love the Lord so much. My sincere gratitude goes to everyone who contributed and took part in making this vision happen.</p>
+        <p>Finally, let me say this: a church misses its main purpose when it no longer evangelizes. The Church’s main job is to save the lost, and I would rather close its doors than omit this sacred mission. May this burden continually run in our bloodstream. May this passion burn in our hearts. And may God help us impart this vision to the next generation so that souls will continue to be saved for Jesus.</p>
+        <p class="signature">Loving you much,<br>Dr. Anthony V. Velasco<br>Senior Pastor<br>Church of God World Missions, Philippines<br>Dasmariñas City, Cavite</p>
+    </section>
+
+    <!-- Section 2: What is C2S -->
+    <section id="about-c2s">
+        <h2>WHAT IS C2S ALL ABOUT?</h2>
+        <p>The men and women of Church of God Philippines aspire to transform the Country into a <span class="bullet">born again nation</span>.</p>
+        <p>To turn this vision into reality, the church came up with the <span style="color:var(--cyan); font-weight:bold;">C2S program</span>. C2S is connecting TWO SOULS coming from outside (unbelievers) and inside the church (believers).</p>
+        <p>The C2S program also provides an avenue for discipleship through small groups. It consists of teaching materials like this manual needed for the discipleship of the souls being connected inside and outside the church.</p>
+        <p>The challenge to faithful men and women of faith is to take the time to invest themselves in others by sharing their journey and thereby enriching those around them. Mentoring enhances one's value to another. What a great delight it is for a mentor to see people growing in grace and faith, and seeing them do the same to others, reflecting the Lord Jesus Christ.</p>
+        <p>When Jesus called His disciples, He said, "Follow Me." That was the beginning of the mentoring process. When Jesus invested in those men, they continued the work of the kingdom of God. The Book of Acts records the continuation of His ministry up until today and prayerfully for the next generation. This is the heart and soul of the C2S program.</p>
+    </section>
+
+    <!-- Section 3: Getting Started -->
+    <section id="getting-started">
+        <h2>GETTING STARTED</h2>
+        <p>Welcome to C2S! We are blessed to have you journey with us as we connect 2 souls to the Lord. This C2S Devotional Manual is a guide we have designed to help you mentor your C2S group on how to live in Christ, like Christ, and for Christ. We provided four modules consisting of 6 lessons each, that you and your group can learn together every week. Each lesson is divided into the following sections:</p>
+        <ul>
+            <li><span class="bullet">Connect:</span> Begin each lesson by sharing a story or asking a question to your C2S mentees. This will help you learn more about each other and relate your own experiences to the lesson.</li>
+            <li><span class="bullet">Words to Ponder:</span> Each lesson is based on a key scripture text that your C2S group will reflect on. This section establishes the biblical foundation of the lesson.</li>
+            <li><span class="bullet">Pointers:</span> Use this guide to help your group understand the overall meaning of the scripture and its significance.</li>
+            <li><span class="bullet">Dig Deeper:</span> So what? Why does this scripture matter in your life? Encourage your C2S mentees to share their understanding of the message and its personal impact.</li>
+            <li><span class="bullet">Life Application:</span> Now what? What specific steps will you take to apply the lesson in your daily life?</li>
+            <li><span class="bullet">Pray:</span> Conclude each lesson with prayer and worship, allowing the Holy Spirit to teach your hearts and transform your lives.</li>
+        </ul>
+        <p>As mentors, your goal is to provide your C2S mentees with simple and basic teachings about the 24 lessons and help them understand these teachings. This will start and build the solid foundation they need for lifetime growth in Christ.</p>
+        <p>To help you prepare spiritually and mentally before meeting with your group, here are a few things to remember:</p>
+        <ul>
+            <li><span class="bullet">PRAY:</span> For your C2S group. Seek the Lord’s guidance and depend on the Holy Spirit to give you the right words and wisdom. Pray for your mentees, that they will open their hearts to receive God’s message during your study.</li>
+            <li><span class="bullet">PLAN:</span> Read and study the material you want to present. Go over the scripture texts again and familiarize yourself with the key spiritual truths and principles of each lesson.</li>
+            <li><span class="bullet">PLAY:</span> Think of creative ways to present the material. People learn better when they’re engaged and having fun! Create an exciting learning experience by incorporating stories, videos, songs, games, and other interactive activities.</li>
+        </ul>
+        <p>DURING YOUR SESSION, ALWAYS:</p>
+        <ul>
+            <li><span class="bullet">Start with an opening prayer.</span> Use the prayer time as an opportunity to train them on how to pray.</li>
+            <li><span class="bullet">Do a brief review.</span> Ask your group if they have any questions about the previous lesson. They might have new questions or insights to share from your previous lesson.</li>
+            <li><span class="bullet">Quote memory verses.</span> This will help your group understand that all of these lessons are already given to us by God in His Word, in the Bible.</li>
+            <li><span class="bullet">Close in prayer.</span> Pray for one another. Ask guidance from the Lord to help your group put into practice the things you learned in this session, as well as to be given opportunities to reteach them to other people.</li>
+        </ul>
+        <p>We thank you for devoting your time and taking on God’s mission for us all. We pray that the Lord will use this manual to empower you and your group to share and connect more souls for the Lord.</p>
+    </section>
+
+    <!-- Section 4: Journey of a Mentee -->
+    <section id="mentee-journey">
+        <h2>THE JOURNEY OF A MENTEE</h2>
+        <p>This is the stage where a mentee starts learning and applying the lessons of Christ in daily life. Through the guidance of a mentor, mentees are encouraged to live intentionally for Christ and grow spiritually. Each lesson is a stepping stone to becoming a disciple who will, in turn, mentor others and continue the cycle of the C2S program.</p>
+    </section>
+
+    <footer>
+        &copy; 2025 Church of God World Missions
+    </footer>
+
+</body>
+</html>
