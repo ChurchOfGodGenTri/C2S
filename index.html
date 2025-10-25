@@ -1,102 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C2S Manual</title>
-    <style>
-        :root {
-            --red: #ff0050;
-            --cyan: #00b7c3;
-            --yellow: #ffa000;
-            --leaf-green: #4caf50;
-            --bg: #ffffff;
-            --text: #333333;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>C2S Manual</title>
+  <style>
+    :root {
+      --red: #ff0050;
+      --cyan: #00b7c3;
+      --yellow: #ffa000;
+      --leaf-green: #4caf50;
+      --bg: #ffffff;
+      --text: #333333;
+    }
 
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            text-align: justify;
-        }
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      text-align: justify;
+    }
 
-        a { text-decoration: none; color: inherit; }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-        /* Header with 2-color boxes */
-        header {
-            display: flex;
-            height: 120px;
-            width: 100%;
-        }
-        .header-left { background: var(--red); flex:1; display:flex; justify-content:center; align-items:center; color:#fff; font-size:2rem; font-weight:bold;}
-        .header-right { background: var(--cyan); flex:1; display:flex; justify-content:center; align-items:center; color:#fff; font-size:2rem; font-weight:bold;}
-        .header-underline { height:5px; background: var(--yellow); width:100%; }
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 150px;
+      width: 100%;
+      position: relative;
+      overflow: visible;
+    }
 
-        /* Chapter buttons */
-        .chapter-buttons {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-        .chapter-buttons a {
-            padding: 12px 18px;
-            color: #fff;
-            font-weight: bold;
-            border-radius: 5px;
-            text-align: center;
-            transition: 0.3s;
-        }
-        .chapter-1 { background: var(--yellow); color: #000; } /* yellow with black text */
-        .chapter-2 { background: var(--red); }
-        .chapter-3 { background: var(--cyan); }
-        .chapter-4 { background: var(--leaf-green); }
+    .header-left,
+    .header-right {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 700;
+    }
 
-        .chapter-buttons a:hover { opacity: 0.8; }
+    .header-left {
+      background: var(--red);
+    }
 
-        /* Sections */
-        section { max-width:900px; margin:40px auto; padding:0 20px; }
-        h2 { color: var(--red); font-size:2rem; margin-bottom:20px; text-align:center; }
-        h3 { color: var(--cyan); font-size:1.5rem; margin-top:30px; }
-        p { margin-bottom:20px; font-size:1.1rem; }
-        .quote { border-left:5px solid var(--yellow); padding-left:15px; font-style:italic; margin:20px 0; color:var(--red); }
-        .bullet { color: var(--yellow); font-weight:bold; margin-left:10px; }
-        .signature { margin-top:40px; font-weight:bold; }
+    .header-right {
+      background: var(--cyan);
+    }
 
-        ul { margin-left:20px; }
+    .header-logo {
+      position: absolute;
+      top: 115%; /* slightly lower */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border: 6px solid #fff;
+      z-index: 2;
+    }
 
-        /* Footer */
-        footer { background: var(--cyan); color:#fff; text-align:center; padding:20px 0; }
-        footer a { color: var(--yellow); }
+    .header-logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+    }
 
-        @media(max-width:768px){
-            .header-left, .header-right { font-size:1.5rem; }
-            h2 { font-size:1.5rem; }
-            h3 { font-size:1.2rem; }
-            p { font-size:1rem; }
-            .chapter-buttons { flex-direction: column; align-items: center; }
-        }
-    </style>
+    /* Chapter Buttons */
+    .chapter-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 150px 10px 30px 10px; /* pushed down further */
+    }
+
+    .chapter-buttons a {
+      padding: 10px 15px;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      text-align: center;
+      transition: 0.3s;
+      font-size: 1rem;
+    }
+
+    .chapter-1 {
+      background: var(--yellow);
+      color: #000;
+    }
+
+    .chapter-2 {
+      background: var(--red);
+    }
+
+    .chapter-3 {
+      background: var(--cyan);
+    }
+
+    .chapter-4 {
+      background: var(--leaf-green);
+    }
+
+    .chapter-buttons a:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* Sections */
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      background: #fff;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: var(--red);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    h3 {
+      color: var(--cyan);
+      font-size: 1.5rem;
+      margin-top: 30px;
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .quote {
+      border-left: 5px solid var(--red);
+      padding-left: 15px;
+      font-style: italic;
+      margin: 20px 0;
+      color: var(--red);
+    }
+
+    .signature {
+      margin-top: 40px;
+      font-weight: bold;
+    }
+
+    ul {
+      margin-left: 20px;
+    }
+
+    footer {
+      background: var(--cyan);
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+      font-weight: 500;
+    }
+
+    footer a {
+      color: var(--yellow);
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .header-left,
+      .header-right {
+        font-size: 1.2rem;
+      }
+
+      .header-logo {
+        width: 130px;
+        height: 130px;
+        top: 120%;
+      }
+
+      .chapter-buttons {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 160px;
+      }
+
+      .chapter-buttons a {
+        width: 85%;
+        font-size: 1rem;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      section {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <header>
-        <div class="header-left">C2S</div>
-        <div class="header-right">Manual</div>
-    </header>
-    <div class="header-underline"></div>
-
-    <!-- Chapter Buttons -->
-    <div class="chapter-buttons">
-        <a href="chapter1.html" class="chapter-1">Chapter 1: Born Again Experience</a>
-        <a href="chapter2.html" class="chapter-2">Chapter 2: Life of a Winner</a>
-        <a href="chapter3.html" class="chapter-3">Chapter 3: Walking in Great Faith</a>
-        <a href="chapter4.html" class="chapter-4">Chapter 4: Marks of a True Follower of Jesus</a>
+  <header>
+    <div class="header-left"></div>
+    <div class="header-logo">
+      <img src="images/c2s-logoo.png" alt="C2S Logo" />
     </div>
+    <div class="header-right"></div>
+  </header>
+
+  <div class="chapter-buttons">
+    <a href="chapter1.html" class="chapter-1">Chapter 1: Born Again Experience</a>
+    <a href="chapter2.html" class="chapter-2">Chapter 2: Life of a Winner</a>
+    <a href="chapter3.html" class="chapter-3">Chapter 3: Walking in Great Faith</a>
+    <a href="chapter4.html" class="chapter-4">Chapter 4: Marks of a True Follower of Jesus</a>
+  </div>
 
     <!-- Section 1: Pastor Message -->
     <section id="pastor-message">
@@ -151,7 +284,7 @@
     <!-- Section 4: Journey of a Mentee -->
     <section id="mentee-journey">
         <h2>THE JOURNEY OF A MENTEE</h2>
-        <p>This is the stage where a mentee starts learning and applying the lessons of Christ in daily life. Through the guidance of a mentor, mentees are encouraged to live intentionally for Christ and grow spiritually. Each lesson is a stepping stone to becoming a disciple who will, in turn, mentor others and continue the cycle of the C2S program.</p>
+        <p>As mentees learn and understand each lesson, they develop the desire to teach this manual to others, too. The mentor handling the C2S group will encourage each mentee to teach this manual soon to their newly connected friends (mentees), making them mentors of their own newly formed C2S group. Finally, when mentees finish studying the manual, they can continue teaching the C2S in their own C2S group. With this continued process, developing mentors that will connect everyone to C2S will become a cycle. Let us make connection a lifestyle. Be connected, stay connected.</p>
     </section>
 
     <footer>
@@ -160,4 +293,7 @@
 
 </body>
 </html>
+
+</html>
+
 
